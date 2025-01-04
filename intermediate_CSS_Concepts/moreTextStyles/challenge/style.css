@@ -1,0 +1,68 @@
+/* General setup */
+
+@font-face {
+  font-family: "ibm_plex_serifregular";
+  src: url("./ibm-font/ibmplexserif-regular-webfont.woff2") format("woff2"),
+    url("./ibm-font/ibmplexserif-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pt_serifbold";
+  src: url("./pt_Serfit_Bold-font/ptserif-bold-webfont.woff2") format("woff2"),
+    url("./pt_Serfit_Bold-font/ptserif-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+  font-family: "ibm_plex_serifregular";
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header,
+section,
+aside,
+nav,
+footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header,
+footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+  font-family: "pt_serifbold";
+}
+
+/* WRITE YOUR CODE BELOW HERE */
