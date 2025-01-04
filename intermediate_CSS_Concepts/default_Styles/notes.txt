@@ -1,0 +1,87 @@
+
+Lesson overview
+
+This section contains a general overview of topics that you will learn in this lesson.
+
+    You’ll learn about default browser styles.
+    You’ll learn how to use a CSS reset to remove or change those default styles.
+
+
+What are default styles and where do they come from?
+
+As you have worked on projects, you likely observed default styles applied to certain elements, such as larger and bolder headings on h1 elements, and blue, underlined links on a elements. There is also a good chance you struggled with things like default margins and padding. These styles are part of the user-agent stylesheets, ensuring basic styling for webpages without CSS. Each browser has its own set of user-agent stylesheets so the default styles do vary slightly between browsers.
+
+
+What if I don’t like the defaults?
+
+With very few exceptions you can simply write your own CSS rules. The rules you write in your stylesheet have higher precedence than the user-agents rules, and therefore overwrite the defaults. However, there is another option.
+
+To address inconsistencies across browsers and establish a consistent starting point for styling, some developers started using CSS resets. These resets are stylesheets containing CSS rules aimed at altering or removing the defaults set by user-agent stylesheets. Using them can help achieve consistency, and can provide a clean slate for developers to apply their styles without interference.
+
+While CSS resets are still commonly used, they are not mandatory. Some developers opt not to use them, while others create their own or utilize prebuilt resets. It’s important to understand that resets are subjective and opinionated, reflecting the preferences of the developer who created them. You can decide how you wish to do things yourself.
+
+Let’s consider some ways…
+
+    Does the reset touch every single possible element? Or a subset of elements? How does it decide which elements to touch and which not to?
+    What properties are changed? Only ones with cross-browser differences? Or some other criteria, like the similarity to other elements that needed changes? Is it OK to apply properties to elements that don’t have cross-browser issues in the name of consistency and efficiency?
+    Do you try to preserve the spirit of the user agent stylesheet? Sensible defaults?
+    Do you apply any properties that don’t have cross-browser issues could be considered beneficial to “reset”, like typographic defaults or box-sizing?
+    Do you include “toolbox” classes for common needs? Or leave that for other projects to handle?
+    Are you concerned about the size of it?
+    Do you use a preprocessor or any other tooling?
+
+Reboot builds upon Normalize, providing many HTML elements with somewhat opinionated styles using only element selectors. Additional styling is done only with classes. For example, we reboot some <table> styles for a simpler baseline and later provide .table, .table-bordered, and more.
+
+Very often developers want to use a certain element, like <h1> or <ul> for its semantic meaning, but don’t want all of the associated default styles. The default margins attached to most elements, for example, almost never match up with what a developer wants. This makes writing CSS sometimes feel like a “whack-a-mole” exercise of repeatedly overriding undesirable defaults.
+
+Finally, there are defaults defined by the CSS specification itself that make the behavior of CSS harder to understand, like box-sizing: content-box.
+
+How to fix it
+
+To fix the problems inherent in browser default stylesheets, frontend developers have traditionally taken three different approaches: normalize the CSS, reset it, or a combination of both.
+
+Hybrid
+
+Fast-forward to 2023, and many frameworks now take a hybrid approach. Tailwind CSS is a good example: it ships with something called Preflight that is a combination of a normalize and reset stylesheet.
+
+modern-normalize
+
+@import "modern-normalize";
+
+The modern-normalize library does the traditional job of a normalize stylesheet, plus adds some opinionated defaults of its own. It’s available as an npm package, or you can grab the CSS directly.
+
+Conclusion
+
+When choosing your approach to CSS on a new project, consider the following:
+
+    Is a CSS framework like Tailwind a good fit for the project? Frameworks typically bundle their own normalize and/or reset.
+
+    Writing CSS from scratch? Start by adding modern-normalize. This gives you border-box and will fix bugs, accessibility issues, and other undesirable behavior that might otherwise go unnoticed during development and end up impacting your users.
+
+    If you are going for a browser-default aesthetic, then you might not need a CSS reset. Otherwise seriously consider adding one, like the lightweight version below. It will save you a lot of repetitive styling in the long run. Also, it can be risky to add a CSS reset late in a project, so this is best decided up front.
+
+
+@import "modern-normalize";
+
+:root {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+  margin: 0;
+}
+
+ol[role="list"], ul[role="list"] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
