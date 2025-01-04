@@ -1,9 +1,8 @@
 What are SVGs? = Scalable Vector Graphics
 
-SVGs are a scalable image format, which means they will easily scale to any size and 
-retain their quality without increasing their filesize. They’re also very useful if 
-you need to create or modify your images programmatically, because you can change 
-their properties through CSS and JavaScript.
+SVGs are a scalable image format, which means they will easily scale to any size and retain their quality without increasing their filesize 
+
+They’re also very useful if you need to create or modify your images programmatically, because you can change their properties through CSS and JavaScript.
 
 SVGs are often used for:
 
@@ -15,42 +14,24 @@ SVGs are often used for:
 
 Con non-svg: opposed to traditional “raster graphics”, where your image is defined by a grid of pixels.
 
-SVGs have another interesting aspect to them: they’re defined using XML. 
-XML (aka, “Extensible Markup Language”) is an HTML-like syntax which is 
-used for lots of things, from APIs, to RSS, to spreadsheet and word editor software.
+SVGs have another interesting aspect to them: they’re defined using XML. XML (aka, “Extensible Markup Language”) is an HTML-like syntax which is used for lots of things, from APIs, to RSS, to spreadsheet and word editor software.
 
-It might still be confusing, but hey–those are words! Tags! Attributes! 
-Compared to binary file formats like JPEG, we’re definitely in familiar territory.
-
-
+It might still be confusing, but hey–those are words! Tags! Attributes! Compared to binary file formats like JPEG, we’re definitely in familiar territory.
 
 Drawbacks
 
-So, clearly SVGs are awesome! Time to go convert all of our images to SVG, 
-right? Well, not quite. SVGs are great for relatively simple images, 
-but because every single detail of the image needs to be written out as 
-XML, they are extremely inefficient at storing complex images. If your 
-image is supposed to be photo-realistic, or it has fine detail or 
-texture (“grunge textures” are a great example), then SVGs are the wrong tool for the job.
+So, clearly SVGs are awesome! Time to go convert all of our images to SVG, right? Well, not quite. SVGs are great for relatively simple images, 
+but because every single detail of the image needs to be written out as XML, they are extremely inefficient at storing complex images. If your 
+image is supposed to be photo-realistic, or it has fine detail or texture (“grunge textures” are a great example), then SVGs are the wrong tool for the job.
 
+xmlns - stands for “XML NameSpace”. This specifies what dialect of XML you’re using. In our case, that dialect is the SVG language spec. Without it, some browsers will not render your image or will render it incorrectly.
 
+viewBox - defines the bounds of your SVG. When you have to define the positions of different points of the elements in your SVG, this is what that’s referencing. 
 
-xmlns - stands for “XML NameSpace”. This specifies what dialect of XML you’re using. In our case, 
-that dialect is the SVG language spec. Without it, some browsers will not render your image or will 
-render it incorrectly.
+It also defines the aspect ratio and the origin of your SVG. So it’s doing quite a lot! Be sure to play around with different values in the example above to get a feel for how it affects the shapes.
 
-viewBox - defines the bounds of your SVG. When you have to define the positions of different points 
-of the elements in your SVG, this is what that’s referencing. 
-It also defines the aspect ratio and the origin of your SVG. So it’s doing quite a lot! 
-Be sure to play around with different values in the example above to get a feel for how it affects the shapes.
+class, id - these attributes function just like they do in HTML. Using these in SVGs allows you to easily target an element via CSS or JavaScript, or to reuse an element via the use element.
 
-class, id - these attributes function just like they do in HTML. Using these in SVGs allows you to easily 
-target an element via CSS or JavaScript, or to reuse an element via the use element.
+Elements such as <circle>, <rect>, <path>, and <text> are defined by the SVG namespace. These are our basic building-blocks. Although you can make extremely complex images with SVG, they are mostly created with just a dozen or so of these basic elements. Here is a complete list of SVG elements.
 
-Elements such as <circle>, <rect>, <path>, and <text> are defined by the SVG namespace. 
-These are our basic building-blocks. Although you can make extremely complex images with SVG, 
-they are mostly created with just a dozen or so of these basic elements. Here is a complete 
-list of SVG elements.
-
-Many SVG attributes, such as fill and stroke, can be changed in your CSS. Learn more in 
-this article on SVG properties and CSS.
+Many SVG attributes, such as fill and stroke, can be changed in your CSS. Learn more in this article on SVG properties and CSS.
