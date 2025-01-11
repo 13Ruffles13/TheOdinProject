@@ -1,0 +1,8 @@
+
+Lesson overview
+
+This section contains a general overview of topics that you will learn in this lesson.
+
+    Recognize the basic parts of a CSS function.
+    Learn about the calc(), min(), max(), and clamp() functions and how to use each one.
+
