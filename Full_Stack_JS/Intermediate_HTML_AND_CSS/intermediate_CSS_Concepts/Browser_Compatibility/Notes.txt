@@ -1,0 +1,34 @@
+
+Lesson overview
+
+This section contains a general overview of topics that you will learn in this lesson.
+
+    Understand browser compatibility and its history.
+    Know how new CSS features make their way into browsers.
+    Know how to check for compatibility.
+
+WorldWideWeb browser. It was written by Tim Berners-Lee while working for the European nuclear research agency known as CERN. It was later renamed to Nexus, to avoid confusion with the World Wide Web.
+
+What is browser compatibility?
+
+Today, it is impossible to imagine the Web without the use of browsers. We have witnessed a shift from standalone applications to HTML5 and Progressive Web Apps that allow applications to fully function within a browser. For example, Microsoft Word and Excel for the longest time could only be executed via a standalone application. Now, you can utilize those applications through any browser without the need to install any files.
+
+https://www.w3.org/
+
+When is it safe to use new features?
+
+As exciting as it is to implement new features, there is a risk of rushing. It would not be a positive experience for your users to find that, for example, your application used to work well in Firefox, but due to changes in the codebase it is now unusable in Firefox but works well in Safari. Thankfully, there is a tool that can help you prevent this situation.
+
+https://caniuse.com/
+
+It is generally good advice to implement new features when they are supported by most common browsers. This way you’re less likely to encounter an issue that a lot of users will face.
+
+Mobile browsers
+
+Traditionally, the Web was desktop computer first. The application was successful if it worked well on desktop browsers. But as smartphones have become more popular, each year more and more users are using mobile devices as their main Web-facing device. In some areas of the world, mobile users are a vast majority.
+
+There are a couple of specifics about mobile browsers that you need to keep in mind.
+
+    On iOS and iPadOS, Safari is technically the only supported browser. Yes, you can install Chrome or Firefox, and you can even set them as a default, but they are not full browsers. They are still using the Safari rendering engine (WebKit). Therefore, for your web application to work for Apple users, you have to ensure support for WebKit and other technologies used in Safari. It’s important to remember that mobile browsers are not one-to-one with their desktop counterparts. A project that works in the desktop version of Safari might still need adjustments to work properly on the mobile version of the same browser.
+    
+    Another consideration for mobile browsers is the magnitude of different screen sizes. It is virtually impossible to have every physical device available to test, and thankfully browsers provide a way to emulate other devices. The important piece to remember is that when, for example, you emulate an iPhone in Chrome, all that you’re emulating is the screen size. Keep in mind that any specific considerations of the operating system will not be reproducible. Which means that even though everything functions well in Chrome when emulating a device, it could behave differently on the actual phone or tablet device.
