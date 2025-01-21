@@ -47,3 +47,6 @@ Sometimes you will need to include validations that the built-in validations won
 In this case, we will need to get creative and make custom validations using JavaScript and CSS. We’ll dive into how to achieve validation via JavaScript in a future lesson.
 
 It’s also worth noting client-side validations are not a silver bullet for ensuring users enter the correct data. To ensure the integrity of any user data coming into our systems, we should also have server-side validations in place. We will cover this side of validations later in the curriculum.
+
+https://www.sitepoint.com/html-forms-constraint-validation-complete-guide/
+https://www.silocreativo.com/en/css-rescue-improving-ux-forms/
